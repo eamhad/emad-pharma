@@ -1,0 +1,11 @@
+{
+  "name": "emad-pharma-site",
+  "version": "1.0.0",
+  "description": "Static website for Emad Pharma, served by a minimal Node.js server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

@@ -18,13 +18,13 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:'IBM Plex Sans', sans-serif;
+  font-family:'IBM Plex Sans','Noto Sans','Noto Sans Devanagari','Noto Sans Bengali','Noto Sans Arabic','Noto Sans SC', sans-serif;
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,.serif{
-  font-family:'Libre Caslon Text', serif;
+  font-family:'Libre Caslon Text','Noto Sans','Noto Sans Devanagari','Noto Sans Bengali','Noto Sans Arabic','Noto Sans SC', serif;
   font-weight:400;
   margin:0;
   color:var(--pine-deep);
@@ -67,8 +67,26 @@ header{
   transition:background .15s ease;
 }
 .nav-cta:hover{background:var(--coral-deep);}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.lang-select{
+  font-family:inherit;font-size:0.85rem;color:var(--ink);
+  background:var(--white);border:1px solid var(--line);border-radius:2px;
+  padding:8px 10px;cursor:pointer;
+  transition:border-color .15s ease;
+}
+.lang-select:hover{border-color:var(--pine);}
 .navtoggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
 .navtoggle span{display:block;width:22px;height:2px;background:var(--pine-deep);margin:5px 0;}
+
+/* ---------- RTL support (Arabic / Urdu) ---------- */
+html[dir="rtl"] .dash{margin-left:0;margin-right:0;}
+html[dir="rtl"] .stat{border-left:none;border-right:1px solid var(--line);}
+html[dir="rtl"] .stat:first-child{border-right:none;padding-right:0;}
+html[dir="rtl"] .pillar{grid-template-columns:1fr 64px;}
+html[dir="rtl"] .pillar .pnum{order:2;text-align:left;}
+html[dir="rtl"] .ta-row{grid-template-columns:auto 1fr 1fr 64px;}
+html[dir="rtl"] .news-row{grid-template-columns:auto 1fr 120px;}
+html[dir="rtl"] blockquote,html[dir="rtl"] .kicker,html[dir="rtl"] .lede{text-align:right;}
 
 /* ---------- Hero ---------- */
 .hero{
